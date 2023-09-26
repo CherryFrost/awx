@@ -7,7 +7,7 @@
     - name: Show interface
       cisco.ios.ios_command:
         commands: sho run interface vlan24
-      register: vlan204
+      register: vlan24
 
     - name: Display vlan24 variable
       debug:
