@@ -1,0 +1,14 @@
+---
+- name: IOS Playbook to test AWX and view vlan 24 running config
+  hosts: Phoenix
+  gather_facts: no
+
+  tasks:
+    - name: Show interface
+      cisco.ios.ios_command:
+        commands: sho run interface vlan24
+      register: vlan204
+
+    - name: Display vlan24 variable
+      debug:
+        var: vlan24.stdout_lines[0]
