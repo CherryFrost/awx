@@ -8,6 +8,7 @@
       cisco.ios.ios_config:
         lines:
           - logging 192.168.60.172
+        save_when: changed
           
     - name: issuing sho run | i logging
       cisco.ios.ios_command:
