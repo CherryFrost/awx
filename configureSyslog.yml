@@ -8,8 +8,9 @@
       cisco.ios.ios_config:
         lines:
           - logging 192.168.60.172
-- name: Verify Syslog Configuration on Cisco Device
-      cisco_ios_ios_command:
+          
+    - name: Verify Syslog Configuration on Cisco Device
+      cisco.ios.ios_command:
         commands: show running-config | i logging
       register: syslog
       debug:
