@@ -11,7 +11,7 @@
   tasks:
     - name: Run verification command
       cisco.ios.ios_command:
-        commands: show runnning-config | i logging
+        commands: show running-config | i logging
       register: syslog
       
     - name: Print logging output 
