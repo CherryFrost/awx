@@ -1,0 +1,17 @@
+---
+- name: IOS Playbook to Configure and Verify Syslog logging
+  hosts: PHX9300-4
+  gather_facts: no
+
+  tasks:
+    - name: Configure Syslog Server on Cisco Device
+      cisco.ios.ios_config:
+        lines:
+          - logging <syslog server>
+
+    - name: Verify Syslog configuration
+      cisco_ios_ios_command:
+        commands: show running-config | i logging
+      register: syslog
+      debug:
+        var: syslog.stdout_lines[0]
