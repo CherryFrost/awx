@@ -9,7 +9,9 @@
         lines:
           - logging 192.168.60.172
           
-    - name: Verify Syslog Configuration on Cisco Device
+- name: Verify Syslog Configuration on Cisco Device
+  tasks:
+    - name: Print Syslog output
       cisco.ios.ios_command:
         commands: show running-config | i logging
       register: syslog
