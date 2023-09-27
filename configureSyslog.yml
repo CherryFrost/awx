@@ -8,15 +8,12 @@
       cisco.ios.ios_config:
         lines:
           - logging 192.168.60.172
-          
-- name: IOS Playbook to Verify Syslog logging
-  hosts: PHX9300-4
-  gather_facts: no
-
   tasks:
     - name: Print Output
       cisco.ios.ios_command:
         commands: show run int vlan 24
       register: syslog
+      
+    - name: Print  
       debug:
         var: syslog.stdout_lines[0]
