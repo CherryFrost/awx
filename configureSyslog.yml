@@ -1,6 +1,6 @@
 ---
 - name: IOS Playbook to Configure Syslog logging
-  hosts: PHX9300-4
+  hosts: PHX9300-26
   gather_facts: no
 
   tasks:
