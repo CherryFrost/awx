@@ -9,11 +9,11 @@
         lines:
           - logging 192.168.60.172
   tasks:
-    - name: Print Output
+    - name: Run verification command
       cisco.ios.ios_command:
-        commands: show run int vlan 24
+        commands: show runnning-config | i logging
       register: syslog
       
-    - name: Print  
+    - name: Print logging output 
       debug:
         var: syslog.stdout_lines[0]
