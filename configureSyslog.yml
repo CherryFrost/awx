@@ -9,7 +9,7 @@
         lines:
           - logging 192.168.60.172
   tasks:
-    - name: Run verification command
+    - name: issuing sho run | i logging
       cisco.ios.ios_command:
         commands: show running-config | i logging
       register: syslog
