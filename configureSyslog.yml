@@ -7,6 +7,7 @@
     - name: Configure Syslog Server on Cisco Device
       cisco.ios.ios_config:
         lines:
+          - configure terminal
           - logging 192.168.60.172
       cisco_ios_ios_command:
         commands: show running-config | i logging
