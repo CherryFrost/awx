@@ -22,6 +22,6 @@
 
     - name: Copy output to local file
       ansible.builtin.copy:
-        content: "{{portsecurity.stdout}}"
+        content: "{{violations.stdout}}"
         dest: C:\Users\ahagues2\Desktop
       delegate_to: localhost
