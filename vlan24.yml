@@ -1,6 +1,6 @@
 ---
 - name: IOS Playbook to test AWX and view vlan 24 running config
-  hosts: DEMO-PHX
+  hosts: PHX9300-4
   gather_facts: no
 
   tasks:
