@@ -1,7 +1,7 @@
 ---
 - name: IOS Playbook to gather a list of Port Security Violations
   hosts: PHX9300-4
-  gather_facts: yes
+  gather_facts: no
 
   tasks:
     - name: Show Port-Security Violations
