@@ -12,7 +12,10 @@
     - name: Display Target Device Hostname
       cisco.ios.ios_facts:
 
-    - name: Display Port-Security Violations
+    - name: Display Hostname
       debug:
         msg: "These Port-Security violations are associated with {{ ansible_net_hostname }}"
+
+    - name: Display Port-Security Violations
+      debug:
         var: violations.stdout_lines[0]
