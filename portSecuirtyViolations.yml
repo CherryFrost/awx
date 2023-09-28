@@ -1,0 +1,14 @@
+---
+- name: IOS Playbook to gather a list of Port Security Violations
+  hosts: PHX9300-4
+  gather_facts: no
+
+  tasks:
+    - name: Show Port-Security Violations
+      cisco.ios.ios_command:
+        commands: show port-security
+      register: violations
+
+    - name: Display Port-Security Violations
+      debug:
+        var: violations.stdout_lines[0]
