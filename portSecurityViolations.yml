@@ -1,7 +1,7 @@
 ---
 - name: IOS Playbook to gather a list of Port Security Violations
   hosts: PHX9300-4
-  gather_facts: no
+  gather_facts: yes
 
   tasks:
     - name: Show Port-Security Violations
@@ -9,6 +9,10 @@
         commands: show port-security
       register: violations
 
+    - name: Display Target Device Hostname
+      cisco.ios.ios_facts:
+
     - name: Display Port-Security Violations
       debug:
+        msg: "These Port-Security violations are associated with {{ ansible_net_hostname }}"
         var: violations.stdout_lines[0]
