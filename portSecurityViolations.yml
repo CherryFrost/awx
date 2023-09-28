@@ -19,3 +19,9 @@
     - name: Display Port-Security Violations
       debug:
         var: violations.stdout_lines[0]
+
+    - name: Copy output to local file
+      ansible.builtin.copy:
+        content: "{{portsecurity.stdout}}"
+        dest: C:\Users\ahagues2\Desktop
+      delegate_to: localhost
